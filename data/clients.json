@@ -1,0 +1,46 @@
+[
+  {
+    "id": "5f74c9cf-3298-4447-9b71-8fc82f4a6052",
+    "name": "Marcos Javier",
+    "email": "marcosdavid@gmail.com",
+    "phone": "+54 2657 358805",
+    "address": "Ardiles 326",
+    "location": {
+      "lat": -34.603722,
+      "lng": -58.381592
+    },
+    "createdAt": "2025-05-10T00:53:34.434Z",
+    "updatedAt": "2025-05-10T15:57:58.515Z"
+  },
+  {
+    "id": "3b230f2e-94a8-4d0b-a27b-4c01d519d06f",
+    "name": "Ester Agueda Alvarez",
+    "email": "esteragueda.12@gmail.com",
+    "phone": "+54 264 543 8867",
+    "address": "Av 25 de Mayo 4022",
+    "location": {
+      "lat": -34.603722,
+      "lng": -58.381592
+    },
+    "createdAt": "2025-05-10T15:58:57.468Z",
+    "updatedAt": "2025-05-10T15:59:17.249Z"
+  },
+  {
+    "id": "9af7db56-3b8d-4f7f-bc7c-7b3113797cfb",
+    "name": "Guillermo David Andrada",
+    "email": "guillermoandrada@gmail.com",
+    "phone": "03876295801",
+    "address": "Av 25 de Mayo 4022",
+    "createdAt": "2025-05-10T16:43:13.832Z",
+    "updatedAt": "2025-05-10T16:43:13.832Z"
+  },
+  {
+    "id": "f2f87d24-1954-44d0-9da6-0b0865fec53b",
+    "name": "Paula Ceballos",
+    "email": "chilitowey@gmail.com",
+    "phone": "2657553322",
+    "address": "Ardiles 326",
+    "createdAt": "2025-05-10T19:28:04.365Z",
+    "updatedAt": "2025-05-10T19:28:04.365Z"
+  }
+]
