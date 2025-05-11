@@ -5,8 +5,49 @@ import { ref, get, set, update } from 'firebase/database'
 import { randomUUID } from 'crypto'
 
 async function readSales() {
-  const snapshot = await get(ref(db, 'sales'))
-  return snapshot.exists() ? Object.values(snapshot.val()) : []
+  const snapshot = await get(ref(db, 'sales'));
+  if (!snapshot.exists()) return [];
+
+  const sales = Object.values(snapshot.val()) as any[];
+  const validSales = [];
+  for (const sale of sales) {
+    // Normaliza: si tiene 'products' pero no 'items', conviértelo
+    if (!Array.isArray(sale.items) && Array.isArray(sale.products)) {
+      sale.items = sale.products.map((p: any, idx: any) => ({
+        id: p.id || `${sale.id}-item-${idx}`,
+        productId: p.productId,
+        quantity: p.quantity,
+        price: p.price,
+        product: p.product // por si ya está expandido
+      }));
+    }
+    if (!Array.isArray(sale.items)) {
+      sale.items = [];
+    } else {
+      // Solo items con productId válido
+      sale.items = await Promise.all(
+        sale.items
+          .filter((item: any) => item && item.productId)
+          .map(async (item: any) => {
+            if (!item.product && item.productId) {
+              const prodSnap = await get(ref(db, `products/${item.productId}`));
+              item.product = prodSnap.exists() ? prodSnap.val() : null;
+            }
+            return item;
+          })
+      );
+    }
+    // Solo ventas con al menos 1 item con producto válido
+    sale.items = sale.items.filter((item: any) => item.product);
+    sale.total = sale.items.reduce(
+      (sum: any, item: any) => sum + (item.price || 0) * (item.quantity || 0),
+      0
+    );
+    if (sale.items.length > 0) {
+      validSales.push(sale);
+    }
+  }
+  return validSales;
 }
 
 export async function GET() {
