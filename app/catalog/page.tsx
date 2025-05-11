@@ -5,7 +5,7 @@ import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
-import { Plus } from "lucide-react"
+import { Loader2, Plus } from "lucide-react"
 import Nav from "@/components/navbar"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
@@ -26,15 +26,36 @@ export default function Catalog() {
   const [products, setProducts] = useState<Product[]>([])
   const [search, setSearch] = useState('')
   const debouncedSearch = useDebounce(search, 400)
+  const [flagOfEmpty, setFlagOfEmpty] = useState(false)
+  const [loading, setLoading] = useState(true)
 
-  // Fetch products from API on mount
+  const fetchProducts = async () => {
+    setLoading(true)
+      try {
+        const response = await fetch('/api/products')
+        const data = await response.json()
+        if(data.length === 0) {
+          setFlagOfEmpty(true)
+          console.log('No hay productos')
+        }
+        if(search.length > 0) {
+          handleSearch()
+        } else {
+          setProducts(data)
+          setFlagOfEmpty(false)
+        }
+      } catch (error) {
+        console.error(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
   React.useEffect(() => {
-    fetch('/api/products')
-      .then(res => res.json())
-      .then(setProducts)
+    fetchProducts()
   }, [])
 
-  const filtered = products.filter(p =>
+  const handleSearch = () => products.filter(p =>
     p.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   )
 
@@ -61,7 +82,7 @@ export default function Catalog() {
           </Link>
         </div>
         <div className="grid gap-4 mb-12">
-          {filtered.map((product) => (
+          {products.length > 0 ? products.map((product) => (
             <Link key={product.id} href={`/catalog/${product.id}`}>
               <Card className="overflow-hidden bg-background border-stone-300">
                 <CardContent className="p-0">
@@ -92,9 +113,20 @@ export default function Catalog() {
                 </CardContent>
               </Card>
             </Link>
-          ))}
-          {filtered.length === 0 && (
-            <p className="text-center text-muted-foreground">No se encontraron productos con el término "{search}"</p>
+          )) : (
+            <div className="flex justify-center items-center">
+              <p className="text-center text-muted-foreground">No hay productos</p>
+            </div>
+          )}
+          {search.length > 0 && !loading && (
+            <div className="flex justify-center items-center">
+              <p className="text-center text-muted-foreground">No hay productos con el término "{search}"</p>
+            </div>
+          )}
+          {loading && (
+            <div className="flex justify-center items-center">
+              <Loader2 className="ml-2 h-12 w-12 animate-spin" />
+            </div>
           )}
         </div>
       </main>

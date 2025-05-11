@@ -79,7 +79,7 @@ export default function InventoryTable({ search }: { search: string }) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {products && products.length === 0 ? (
+        {products && products.length >= 0 ? (
           <TableRow>
             <TableCell colSpan={columnsNames.length + 1} className="text-center">No hay productos</TableCell>
           </TableRow>
