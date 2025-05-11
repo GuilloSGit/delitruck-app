@@ -20,7 +20,7 @@ export const useCustomers = () => {
   const fetchCustomers = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('/api/customers');
+      const response = await fetch('/api/clients');
       if (!response.ok) throw new Error('Error al cargar clientes');
       const data = await response.json();
       setCustomers(data);
@@ -34,7 +34,7 @@ export const useCustomers = () => {
 
   const createCustomer = async (customerData: Omit<Customer, 'id' | 'createdAt'>) => {
     try {
-      const response = await fetch('/api/customers', {
+      const response = await fetch('/api/clients', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(customerData),
@@ -50,7 +50,7 @@ export const useCustomers = () => {
 
   const updateCustomer = async (id: string, customerData: Partial<Customer>) => {
     try {
-      const response = await fetch(`/api/customers/${id}`, {
+      const response = await fetch(`/api/clients/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(customerData),
@@ -70,7 +70,7 @@ export const useCustomers = () => {
 
   const deleteCustomer = async (id: string) => {
     try {
-      const response = await fetch(`/api/customers/${id}`, {
+      const response = await fetch(`/api/clients/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error('Error al eliminar cliente');

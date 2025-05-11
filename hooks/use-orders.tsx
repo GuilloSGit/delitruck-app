@@ -48,7 +48,7 @@ export const useOrders = () => {
     try {
       setIsLoading(true)
       setError(null)
-      const response = await fetch('/api/orders', {
+      const response = await fetch('/api/sales', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ export const useOrders = () => {
     try {
       setIsLoading(true)
       setError(null)
-      const response = await fetch(`/api/orders/${id}`)
+      const response = await fetch(`/api/sales/${id}`);
       
       if (!response.ok) {
         throw new Error('Error al obtener la venta')
@@ -94,7 +94,7 @@ export const useOrders = () => {
     try {
       setIsLoading(true)
       setError(null)
-      const response = await fetch('/api/orders')
+      const response = await fetch('/api/sales');
       
       if (!response.ok) {
         throw new Error('Error al obtener las ventas')
@@ -114,7 +114,7 @@ export const useOrders = () => {
     try {
       setIsLoading(true)
       setError(null)
-      const response = await fetch(`/api/orders/${id}`, {
+      const response = await fetch(`/api/sales/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
