@@ -112,7 +112,8 @@ export default function OrderDetail() {
                     </tr>
                   </thead>
                   <tbody>
-                    {order.items.map((item) => (
+                    {order.items?.length > 0
+                      ? order.items.map((item) => (
                       <tr key={item.id} className="border-b last:border-b-0 border-border">
                         <td className="py-2">{item.product?.name ?? '[Producto eliminado]'}</td>
                         <td className="text-center py-2">{item.quantity}</td>
@@ -121,7 +122,9 @@ export default function OrderDetail() {
                           {formatCurrency(item.price * item.quantity)}
                         </td>
                       </tr>
-                    ))}
+                    ))
+                      : <tr><td colSpan={99}>Sin items</td></tr>
+                    }
                   </tbody>
                   <tfoot>
                     <tr>

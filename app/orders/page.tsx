@@ -48,14 +48,14 @@ export default function Orders() {
                 <Card className="overflow-hidden bg-background border-stone-200 hover:shadow-md transition-shadow"> {/* Use bg-background for theme-aware background color */}
                   <CardContent className="p-4">
                     <div className="flex justify-between items-start">
-                      <h3 className="font-semibold text-lg">{order.customer.name}</h3>
+                      <h3 className="font-semibold text-lg">{order.customer?.name || "Cliente desconocido"}</h3>
                       <Badge variant={order.status === "pending" ? "outline" : "default"}>
                         {order.status === "pending" ? "Pendiente" : "Completada"}
                       </Badge>
                     </div>
 
                     <div className="mt-3 space-y-1 text-sm text-muted-foreground">
-                      {order.items.map((item) => (
+                      {order.items?.length > 0 ? order.items.map((item) => (
                         <div key={item.id} className="flex justify-between">
                           <div className="flex">
                             <span className="mr-2">{item.quantity} ×</span>
@@ -65,7 +65,7 @@ export default function Orders() {
                             {formatCurrency(item.price * item.quantity)}
                           </span>
                         </div>
-                      ))}
+                      )) : <div>Sin items</div>}
                     </div>
 
                     <div className="mt-3 pt-2 border-t flex justify-between items-center">

@@ -1,24 +1,16 @@
-import { promises as fs } from 'fs'
-import path from 'path'
 import { NextResponse } from 'next/server'
+import { db } from '@/firebase'
+import { ref, get, update } from 'firebase/database'
 
-const DATA_PATH = path.join(process.cwd(), 'data', 'products.json')
-
-async function readProducts() {
-  try {
-    const data = await fs.readFile(DATA_PATH, 'utf-8')
-    return JSON.parse(data)
-  } catch (err) {
-    if ((err as any).code === 'ENOENT') {
-      await fs.writeFile(DATA_PATH, '[]', 'utf-8')
-      return []
-    }
-    throw err
-  }
+// Lee un producto por id desde Firebase
+async function readProductById(id: string) {
+  const snapshot = await get(ref(db, `products/${id}`))
+  return snapshot.exists() ? snapshot.val() : null
 }
 
-async function writeProducts(products: any[]) {
-  await fs.writeFile(DATA_PATH, JSON.stringify(products, null, 2), 'utf-8')
+// Actualiza un producto por id en Firebase
+async function updateProductById(id: string, data: any) {
+  await update(ref(db, `products/${id}`), data)
 }
 
 export async function POST(
@@ -28,19 +20,19 @@ export async function POST(
   try {
     const json = await request.json()
     const { quantity } = json
-    let products = await readProducts()
-    const idx = products.findIndex((p: any) => p.id === params.id)
-    if (idx === -1) {
+    const id = params.id
+    const product = await readProductById(id)
+    if (!product) {
       return NextResponse.json(
         { error: 'Producto no encontrado' },
         { status: 404 }
       )
     }
     // Ajustar el stock
-    products[idx].stock = (products[idx].stock || 0) + Number(quantity)
-    products[idx].updatedAt = new Date().toISOString()
-    await writeProducts(products)
-    return NextResponse.json(products[idx])
+    const newStock = (product.stock || 0) + Number(quantity)
+    const updatedAt = new Date().toISOString()
+    await updateProductById(id, { stock: newStock, updatedAt })
+    return NextResponse.json({ ...product, stock: newStock, updatedAt })
   } catch (error) {
     console.error('Error al ajustar el stock:', error)
     return NextResponse.json(

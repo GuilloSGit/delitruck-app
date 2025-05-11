@@ -25,3 +25,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# firebase
+delitruck-80f05-d75872fe125e.json
+firebase.json
+firebase
+firebase-adminsdk-fbsvc@delitruck-80f05.iam.gserviceaccount.com
