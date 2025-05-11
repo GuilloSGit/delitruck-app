@@ -5,9 +5,9 @@
     "description": "Porción de papas fritas crocantes.",
     "price": "15",
     "imageUrl": "/uploads/prod-2_8c8c5d65-90e0-40a5-944e-eea38786dbb9.jpeg",
-    "stock": 5,
+    "stock": 4,
     "createdAt": "2025-05-09T21:40:00-03:00",
-    "updatedAt": "2025-05-10T19:32:02.025Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   },
   {
     "id": "bf2886b8-b307-4a26-88c8-aa9732a147c5",
@@ -15,9 +15,9 @@
     "description": "riquísimo para toda ocasión",
     "price": "114.34",
     "imageUrl": "/uploads/bf2886b8-b307-4a26-88c8-aa9732a147c5_844ec841-d0da-4b7c-a8a7-91d0dd3d14b3.jpeg",
-    "stock": 11,
+    "stock": 10,
     "createdAt": "2025-05-10T03:19:52.351Z",
-    "updatedAt": "2025-05-10T19:32:02.025Z",
+    "updatedAt": "2025-05-11T00:35:31.934Z",
     "image": {}
   },
   {
@@ -26,9 +26,9 @@
     "description": "nada que aclarar",
     "price": "2564.7",
     "imageUrl": "/uploads/58e3c175-dc86-43f4-b60b-eeafadd9a610.png",
-    "stock": 6,
+    "stock": 5,
     "createdAt": "2025-05-10T16:00:10.707Z",
-    "updatedAt": "2025-05-10T19:49:23.626Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   },
   {
     "id": "4d0d27c6-c967-407c-8fb3-afa8987a63e8",
@@ -36,9 +36,9 @@
     "description": "",
     "price": "335.85",
     "imageUrl": "/uploads/003d50d1-09e9-4f33-908e-44b5c2ddf395.jpeg",
-    "stock": 5,
+    "stock": 4,
     "createdAt": "2025-05-10T16:00:41.040Z",
-    "updatedAt": "2025-05-10T19:32:02.025Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   },
   {
     "id": "811aca3a-c1ad-4169-8125-f5d5bf7c1f44",
@@ -56,9 +56,9 @@
     "description": "",
     "price": "22.88",
     "imageUrl": "/uploads/f4f2562f-1711-4e43-ada7-5a77f8a8efe2.jpeg",
-    "stock": 17,
+    "stock": 16,
     "createdAt": "2025-05-10T16:02:59.412Z",
-    "updatedAt": "2025-05-10T19:46:52.144Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   },
   {
     "id": "2c3159f5-6d34-4de3-a606-c05187d5c0c5",
@@ -66,9 +66,9 @@
     "description": "",
     "price": "2234.444",
     "imageUrl": "/uploads/2c3159f5-6d34-4de3-a606-c05187d5c0c5_578deb2b-368a-44fa-b18a-1c4d753a5fac.jpeg",
-    "stock": 101,
+    "stock": 100,
     "createdAt": "2025-05-10T16:03:30.517Z",
-    "updatedAt": "2025-05-10T19:32:02.025Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   },
   {
     "id": "6f49f8c6-fbbe-4e98-a88a-535f5e51084b",
@@ -76,9 +76,9 @@
     "description": "",
     "price": 1200,
     "imageUrl": "/uploads/e8bc53ac-b469-4f16-abc3-ff69d8488c63.jpeg",
-    "stock": 131,
+    "stock": 130,
     "createdAt": "2025-05-10T19:04:52.204Z",
-    "updatedAt": "2025-05-10T19:28:52.665Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   },
   {
     "id": "422a200f-f2c4-4d95-b512-a6bd116102f3",
@@ -86,9 +86,9 @@
     "description": "",
     "price": 14.56,
     "imageUrl": "/uploads/ba397f93-b0be-4d6c-8ccb-b77891c4cf72.jpeg",
-    "stock": 96,
+    "stock": 95,
     "createdAt": "2025-05-10T19:12:15.101Z",
-    "updatedAt": "2025-05-10T19:32:02.025Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   },
   {
     "id": "3561e0c7-41e4-4349-a504-190d967eb8f4",
@@ -96,9 +96,9 @@
     "description": "",
     "price": "45.34",
     "imageUrl": "/uploads/c9ad891b-614e-4147-9d52-a22b3bab4cd9.jpeg",
-    "stock": 69,
+    "stock": 68,
     "createdAt": "2025-05-10T19:12:31.201Z",
-    "updatedAt": "2025-05-10T19:49:38.588Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   },
   {
     "id": "3546fa05-1a66-4f8d-a561-42e5c7f2ec43",
@@ -106,8 +106,8 @@
     "description": "",
     "price": 20500,
     "imageUrl": "/uploads/3e961f80-58a6-42bf-8854-42889657b73f.png",
-    "stock": 9,
+    "stock": 8,
     "createdAt": "2025-05-10T19:23:41.188Z",
-    "updatedAt": "2025-05-10T19:32:02.025Z"
+    "updatedAt": "2025-05-11T00:35:31.934Z"
   }
 ]

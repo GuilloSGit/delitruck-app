@@ -45,7 +45,7 @@ export function OrderReceipt({ order, tipo = 'recibo' }: OrderReceiptProps) {
 
   const numero = order.id.slice(-6).padStart(6, '0')
   return (
-    <div className="w-full bg-background text-foreground">
+    <div className="w-full bg-background text-foreground overflow-y-auto">
       {/* Botón de imprimir nativo */}
       <div ref={receiptRef} className="receipt-print bg-card dark:bg-zinc-900 p-2 sm:p-6 rounded-md sm:rounded-lg shadow print:shadow-none mt-2 sm:mt-4 text-foreground border border-border">
         {/* Encabezado */}
@@ -82,7 +82,7 @@ export function OrderReceipt({ order, tipo = 'recibo' }: OrderReceiptProps) {
         {/* Productos */}
         <div className="mb-4 sm:mb-6">
           <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Productos</h3>
-          <div className="bg-card dark:bg-zinc-800 p-2 sm:p-3 rounded-md overflow-x-auto">
+          <div className="bg-card dark:bg-zinc-800 p-2 sm:p-3 rounded-md overflow-auto">
             <table className="w-full min-w-[340px] text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-border">

@@ -150,7 +150,7 @@ export default function OrderDetail() {
       </main>
 
       <Dialog open={showReceipt} onOpenChange={setShowReceipt}>
-        <DialogContent className="w-full">
+        <DialogContent className="w-full overflow-y-auto">
           <DialogDescription className='hidden'>Recibo de Venta</DialogDescription>
           <DialogHeader>
             <DialogTitle>

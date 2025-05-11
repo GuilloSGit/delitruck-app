@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { MobileNavBar } from "@/components/mobile-nav-bar";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -43,6 +44,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <MobileNavBar />
+        <Analytics />
       </body>
     </html>
   )

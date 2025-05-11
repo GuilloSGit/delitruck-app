@@ -324,5 +324,76 @@
     "createdAt": "2025-05-10T19:32:02.023Z",
     "updatedAt": "2025-05-10T20:17:07.125Z",
     "status": "pending"
+  },
+  {
+    "id": "f6f5e71d-fd92-4c06-8601-40c5faa00fec",
+    "clientId": "9af7db56-3b8d-4f7f-bc7c-7b3113797cfb",
+    "products": [
+      {
+        "productId": "3546fa05-1a66-4f8d-a561-42e5c7f2ec43",
+        "quantity": 1,
+        "price": 20500,
+        "id": "b377cbad-e7bb-4240-b0e2-2d3c08c7f27f"
+      },
+      {
+        "productId": "3561e0c7-41e4-4349-a504-190d967eb8f4",
+        "quantity": 1,
+        "price": "45.34",
+        "id": "53b3b0a9-3999-4720-98fe-1788e1ed9da5"
+      },
+      {
+        "productId": "422a200f-f2c4-4d95-b512-a6bd116102f3",
+        "quantity": 1,
+        "price": 14.56,
+        "id": "58e32d8e-db7b-45e4-81f2-50fb4200ce5b"
+      },
+      {
+        "productId": "6f49f8c6-fbbe-4e98-a88a-535f5e51084b",
+        "quantity": 1,
+        "price": 1200,
+        "id": "5c7be8ca-65dd-4298-904d-604abf27f015"
+      },
+      {
+        "productId": "2c3159f5-6d34-4de3-a606-c05187d5c0c5",
+        "quantity": 1,
+        "price": "2234.444",
+        "id": "0f55c2c5-e361-4bf6-9583-d43dd680cec0"
+      },
+      {
+        "productId": "90d2bdf1-60f9-4152-94fd-e75fe2525cdb",
+        "quantity": 1,
+        "price": "22.88",
+        "id": "6df46b78-1884-4ca5-9729-ddbd1070ed02"
+      },
+      {
+        "productId": "4d0d27c6-c967-407c-8fb3-afa8987a63e8",
+        "quantity": 1,
+        "price": "335.85",
+        "id": "57dcbcbc-b184-4e95-977f-61a44e7f0f71"
+      },
+      {
+        "productId": "becff841-764d-44d1-8faf-36c5ce9cb7b4",
+        "quantity": 1,
+        "price": "2564.7",
+        "id": "a59166e4-8432-45da-8f2c-07c78c201b3f"
+      },
+      {
+        "productId": "bf2886b8-b307-4a26-88c8-aa9732a147c5",
+        "quantity": 1,
+        "price": "114.34",
+        "id": "51c8fa4f-3c23-45ff-913d-1127968e87b1"
+      },
+      {
+        "productId": "prod-2",
+        "quantity": 1,
+        "price": "15",
+        "id": "597e19d0-3b0f-48c2-9888-2aac3aba256f"
+      }
+    ],
+    "total": 27047.114,
+    "date": "2025-05-11T00:35:31.933Z",
+    "notes": "nada que agregar",
+    "createdAt": "2025-05-11T00:35:31.933Z",
+    "updatedAt": "2025-05-11T00:35:31.933Z"
   }
 ]
